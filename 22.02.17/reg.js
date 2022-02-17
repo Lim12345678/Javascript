@@ -2,11 +2,12 @@
 function solution(str,ch) {
     let answer = 0;
 
-    for(let s of str) {
-        if(s===ch) answer++;
-    }
+    let regexp = new RegExp(ch, 'g');
+    // let regexp = /[R]/gi;
+    let matches_array = str.match(regexp);
+    console.log(matches_array);
 
-    return answer;
+    return matches_array.length;
 }
 
 console.log(solution("COMPUTERPROGRAMMING", "R")); // 3
